@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Little Light</title>
+    <style>
+        @font-face {
+            font-family: 'SunshineCustom';
+            src: url('Sunshine.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #a4c0c9; 
+            font-family: 'SunshineCustom', Georgia, 'Times New Roman', serif; 
+            overflow: hidden; 
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center; 
+            justify-content: flex-end; 
+            box-sizing: border-box;
+            padding: 50px; 
+        }
+
+        .about-text {
+            width: 45%; 
+            color: #2e3b84; 
+            font-size: 24px;
+            line-height: 1.6;
+            text-align: left;
+            padding-right: 100px; 
+            z-index: 10; 
+        }
+
+        @media (max-width: 768px) {
+            .about-text {
+                width: 90%;
+                padding-right: 0;
+                font-size: 18px;
+            }
+        }
+        
+        .star-cluster {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            z-index: 5;
+            width: 500px; 
+            height: 400px;
+        }
+
+        .star-piece {
+            position: absolute;
+            background-image: url('star.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* Large replacement for the line */
+        .s-large { width: 300px; height: 300px; left: 100px; top: -50px; opacity: 0.9; } 
+
+        .s1 { width: 120px; height: 120px; left: 0; top: 120px; opacity: 0.8; } 
+        .s2 { width: 80px;  height: 80px; left: 180px; top: 180px; opacity: 0.8; } 
+        .s3 { width: 60px;  height: 60px; left: 240px; top: 50px; opacity: 0.7; } 
+        
+        .bg-star {
+            position: absolute;
+            background-image: url('star.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 30px; height: 30px;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .bg-s1 { left: 10%; bottom: 15%; width: 50px; height: 50px; }
+        .bg-s2 { left: 45%; top: 55%; width: 35px; height: 35px; }
+        .bg-s3 { left: 65%; bottom: 12%; width: 45px; height: 45px; }
+        .bg-s4 { right: 15%; bottom: 20%; width: 40px; height: 40px; }
+        .bg-s5 { right: 12%; top: 15%; width: 30px; height: 30px;}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="star-cluster">
+            <div class="star-piece s-large"></div>
+            <div class="star-piece s1"></div>
+            <div class="star-piece s2"></div>
+            <div class="star-piece s3"></div>
+        </div>
+
+        <div class="bg-star bg-s1"></div>
+        <div class="bg-star bg-s2"></div>
+        <div class="bg-star bg-s3"></div>
+        <div class="bg-star bg-s4"></div>
+        <div class="bg-star bg-s5"></div>
+
+        <div class="about-text">
+            <p><strong>About</strong></p>
+            <p>
+              This poem holds a special place in my heart because of the way it captures both the struggles we face and the hope that carries us forward. Every time I read it, I'm reminded that even in the darkest moments, there is light waiting on the other side. Its words feel like a gentle push — encouraging me to keep going, to believe in better days, and to trust in my own resilience. For me, it's more than just a poem; it's a source of strength and a quiet reminder that the future is still full of possibility.
+            </p>
+  
+        </div>
+
+    </div>
+
+</body>
+</html>

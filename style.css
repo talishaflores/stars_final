@@ -1,0 +1,31 @@
+/* ===== Reset & Base ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/* p5.js canvas fills the window */
+canvas {
+  display: block;
+}
+
+/* ===== Page content (non-canvas pages) ===== */
+.page-content {
+  padding: 3rem;
+  font-family: 'Host Grotesk', sans-serif;
+  color: #1a1a2e;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-content p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
