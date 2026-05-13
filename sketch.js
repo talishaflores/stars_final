@@ -1,3 +1,10 @@
+//multiple versions but asked claude for help adjusting distance occurance for the star stopping
+//asked claude "this is what i have for code right now, can you please help me find a way to make it"
+//stop at a certain point--lets say a random corner for now"
+
+//Asked claude "yo this is my code, i need help adjusting the bluestar function to allow to be less"
+//difficult to find the ending point. think of it as a quadrant system. i want it to be in the bottom right"
+
 let bg, sunImg;
 let starsImg, uniqueImg;
 let myFont;
@@ -10,9 +17,9 @@ let hasReachedDestination = false;
 function preload() {
   starsImg = loadImage('img/star.png');
   uniqueImg = loadImage('img/bluestar.png');
-  bg      = loadImage('img/longersun.jpg');
-  sunImg  = loadImage('img/Sun.png');
-  myFont  = loadFont('fonts/Sunshine.ttf');
+  bg = loadImage('img/longersun.jpg');
+  sunImg = loadImage('img/Sun.png');
+  myFont = loadFont('fonts/Sunshine.ttf');
 }
 
 function setup() {
@@ -35,16 +42,13 @@ function setup() {
     x: ux, y: uy,
     homeX: ux, homeY: uy,
     angle: random(TWO_PI),
-    scale: 1.5,
-    targetX: width  * 0.1,
-    targetY: height * 0.1
+    scale: 1.5
   };
 }
 
 function draw() {
   background(bg);
 
-  /* Rising sun */
   sunY += 0.075;
   push();
   translate(width * 0.8, height * 0.85 + sunY);
@@ -52,7 +56,6 @@ function draw() {
   image(sunImg, 0, 0, 300, 300);
   pop();
 
-  /* Regular stars — scatter away from mouse */
   for (let i = 0; i < starData.length; i++) {
     let s = starData[i];
     let d = dist(mouseX, mouseY, s.x, s.y);
@@ -75,20 +78,19 @@ function draw() {
     pop();
   }
 
-  /* Blue (unique) star — moves toward corner when chased */
   let ud = dist(mouseX, mouseY, uniqueStar.x, uniqueStar.y);
 
   if (!hasReachedDestination) {
-    if (ud < 150) {
+    if (ud < 250) {
       let uAngle = atan2(uniqueStar.y - mouseY, uniqueStar.x - mouseX);
-      uniqueStar.x += cos(uAngle) * 5;
-      uniqueStar.y += sin(uAngle) * 5;
+      uniqueStar.x += cos(uAngle) * 7;
+      uniqueStar.y += sin(uAngle) * 7;
     } else {
       uniqueStar.x = lerp(uniqueStar.x, uniqueStar.homeX, 0.05);
       uniqueStar.y = lerp(uniqueStar.y, uniqueStar.homeY, 0.05);
     }
 
-    if (uniqueStar.x < width * 0.15 && uniqueStar.y < height * 0.15) {
+    if (uniqueStar.x > width * 0.6 && uniqueStar.y > height * 0.6) {
       hasReachedDestination = true;
     }
   }
@@ -101,14 +103,12 @@ function draw() {
   image(uniqueImg, 0, 0, 60, 60);
   pop();
 
-  /* Hand cursor hint when clickable */
-  if (hasReachedDestination && dist(mouseX, mouseY, uniqueStar.x, uniqueStar.y) < 40) {
+  if (hasReachedDestination && dist(mouseX, mouseY, uniqueStar.x, uniqueStar.y) < 80) {
     cursor(HAND);
   } else {
     cursor(ARROW);
   }
 
-  /* Text overlay */
   fill('rgb(233,229,229)');
   noStroke();
   textFont(myFont);
@@ -117,11 +117,10 @@ function draw() {
   text("The stars are \n proof that...", width / 2, height / 2);
 }
 
-/* ── Clicking the blue star navigates to Poem 2 ── */
 function mousePressed() {
   if (hasReachedDestination) {
     let d = dist(mouseX, mouseY, uniqueStar.x, uniqueStar.y);
-    if (d < 40) {
+    if (d < 80) {
       window.location.href = "page2.html";
     }
   }

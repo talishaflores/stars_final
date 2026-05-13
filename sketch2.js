@@ -1,3 +1,7 @@
+//let claude know "this is my code. do not add anything random as all of these are my assests and animations"
+//i already have this spotlight effect but i dont know how to replace these shapes and make them my images.
+//how do i use an overlay function to make these shapes my texture jpgs?""
+
 let num = 40;
 let stars = [];
 let starImg, bgImg, overlayImg;

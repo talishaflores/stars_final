@@ -1,0 +1,106 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Sunshiney", cursive;
+    overflow: hidden;
+}
+
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+body {
+    background-color: #a5c6ce;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    box-sizing: border-box;
+    padding: 50px;
+    z-index: 10;
+}
+
+
+.star-cluster {
+    flex: 0 0 auto;
+    width: 420px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.star-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.about-text {
+    flex: 0 1 45%;
+    color: #2e3b84;
+    font-size: 28px;
+    line-height: 1.6;
+    text-align: left;
+    z-index: 10;
+}
+
+
+.bg-star {
+    position: absolute;
+    background-image: url('img/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.bg-s1 { left: 10%;   bottom: 15%; width: 50px; height: 50px; }
+.bg-s2 { left: 45%;   top: 55%;    width: 35px; height: 35px; }
+.bg-s3 { left: 65%;   bottom: 12%; width: 45px; height: 45px; }
+.bg-s4 { right: 15%;  bottom: 20%; width: 40px; height: 40px; }
+.bg-s5 { right: 12%;  top: 15%;    width: 30px; height: 30px; }
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100%;
+    }
+
+    .star-cluster {
+        width: 260px;
+        height: 260px;
+    }
+
+    .about-text {
+        flex: none;
+        width: 90%;
+        font-size: 20px;
+    }
+}

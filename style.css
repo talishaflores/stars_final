@@ -1,4 +1,4 @@
-/* ===== Reset & Base ===== */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -6,12 +6,12 @@ html, body {
   font-size: 100%;
 }
 
-/* p5.js canvas fills the window */
+
 canvas {
   display: block;
 }
 
-/* ===== Page content (non-canvas pages) ===== */
+
 .page-content {
   padding: 3rem;
   font-family: 'Host Grotesk', sans-serif;
